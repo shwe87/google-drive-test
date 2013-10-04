@@ -1,6 +1,10 @@
-var SCOPES = 'https://www.googleapis.com/auth/drive';
-let { Loader, Require, unload } = Components.utils.import('https://apis.google.com/js/client.js?onload=handleClientLoad');
+//Everytime the html changes, this code runs.
 
+/*var SCOPES = 'https://www.googleapis.com/auth/drive';
+/*let { Loader, Require, unload } = Components.utils.import('resouce://https://apis.google.com/js/client.js?onload=handleClientLoad');*/
+
+
+/*
 self.port.on('auth',function checkAuth(CLIENT_ID) {
         gapi.auth.authorize(
             {'client_id': CLIENT_ID, 'scope': SCOPES, 'immediate': true},
@@ -85,7 +89,34 @@ function handleClientLoad() {
         window.setTimeout(checkAuth, 1);
       }
 
+*/
 
+
+
+self.port.on('response',function(response){
+	var body = document.getElementById('body');
+	body.innerHTML = response;
+});
+
+
+
+var signIn = document.getElementById('signIn');
+if(signIn != null){
+	document.addEventListener('click',function(event){
+		console.log("Clicked!!!!");	
+	});
+}
+
+var code = document.getElementById('code');
+if (code != null){
+	self.port.emit('takeCode',code.value);
+	console.log(code.value);
+}
+
+
+
+
+console.log(document.title);
 
 
 

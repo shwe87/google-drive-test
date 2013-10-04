@@ -1,0 +1,14 @@
+
+var signIn = document.getElementById('signIn');
+if(signIn != null){
+	document.addEventListener('click',function(event){
+		console.log("Clicked!!!!");	
+	});
+}
+
+var code = document.getElementById('code');
+if (code != null){
+	self.port.emit('takeCode',code.value);
+	console.log(code.value);
+	self.port.emit('close','close');
+}
