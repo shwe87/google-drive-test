@@ -113,10 +113,48 @@ if (code != null){
 	console.log(code.value);
 }
 
+/*
 
 
+
+self.port.on('getAccess',function(response){
+	//var title = document.getElementById('title');
+	//if (title == 'My page'){
+	console.log("here");
+	/*
+	The response format will be:
+	{
+	"access_token" : string,
+	"token_type" : string,
+	"expires_in" : 3600,
+	"id_token" : string,
+	"refresh_token" : string
+	}
+	To access this; response.json.access_token, etc
+	*/
+	
+	
+	
+	/*var str = JSON.stringify(response);
+	console.log(str);
+	console.log(str + ": " + str.length + " characters, " +
+  Buffer.byteLength(str, 'utf8') + " bytes");
+	//console.log(document.title);
+	/*var body = document.getElementById('body');
+	if(body!=null){
+		console.log(response.text);
+		body.innerHTML = response.text;
+	}*/
+	//}
+
+//});
 
 console.log(document.title);
+
+
+/*Uploading a file*/
+
+
 
 
 
